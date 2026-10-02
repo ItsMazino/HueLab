@@ -2,6 +2,8 @@
 
 A browser-only color studio for building five-color palettes, testing text contrast, and exporting reusable CSS variables. HueLab combines a warm editorial interface with real color calculations, a live composition preview, and a locally saved palette collection.
 
+**Live demo:** [Try HueLab](https://hue-lab-theta.vercel.app)
+
 **Repository:** [ItsMazino/HueLab](https://github.com/ItsMazino/HueLab)
 
 ## Table of Contents
