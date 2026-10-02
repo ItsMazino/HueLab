@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <meta
+      name="description"
+      content="A little color studio. Build palettes, test contrast, and export your next idea."
+    />
+    <title>HueLab — A little color studio</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23dc542e'/%3E%3Ccircle cx='20' cy='20' r='10' fill='%23f7f6f2'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#studio">Skip to studio</a>
+    <header>
+      <a class="brand" href="./"
+        ><span class="brandmark" aria-hidden="true">◒</span>huelab<span
+          class="dot"
+          >.</span
+        ></a
+      ><span class="header-note">A LITTLE COLOR STUDIO</span
+      ><button id="library-toggle" class="plain">
+        Saved palettes <span id="saved-count">0</span>
+      </button>
+    </header>
+    <main id="studio">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">EXPERIMENT No. 01 / COLOR</p>
+          <h1>Good things start<br />with <em>a little color.</em></h1>
+        </div>
+        <p class="intro-copy">
+          Find a combination that feels right.<br />
+          Lock your favorites. Make it yours.
+        </p>
+      </section>
+      <section aria-label="Palette editor">
+        <div class="toolbar">
+          <div class="palette-title">
+            <span class="live-dot"></span>
+            <h2 id="palette-name">Terracotta afternoon</h2>
+          </div>
+          <div class="actions">
+            <button id="undo" class="plain" disabled>↶ Undo</button
+            ><button id="generate" class="dark">↻ Generate palette</button>
+          </div>
+        </div>
+        <div id="swatches" class="swatches"></div>
+        <div class="palette-bottom">
+          <span>Click a hex code to edit · Lock colors to keep them</span>
+          <div>
+            <button id="save" class="plain">♡ Save palette</button
+            ><button id="export" class="plain">↓ Export CSS</button>
+          </div>
+        </div>
+      </section>
+      <section class="workbench">
+        <div class="preview-section">
+          <div class="section-label">
+            <h2>01 / In context</h2>
+            <span>YOUR PALETTE, IN THE WILD</span>
+          </div>
+          <div id="preview" class="preview">
+            <div class="preview-art" aria-hidden="true">
+              <div class="art-circle"></div>
+              <div class="art-arch"></div>
+              <div class="art-small"></div>
+              <span>FORM<br />& FEEL.</span>
+            </div>
+            <div class="preview-copy">
+              <span class="mini-label">OBJECTS FOR EVERYDAY</span>
+              <h3>A softer kind<br />of ordinary.</h3>
+              <p>
+                A few considered details.<br />A completely different feeling.
+              </p>
+              <span class="sample-button">Explore the collection ↗</span>
+            </div>
+          </div>
+        </div>
+        <div class="contrast-section">
+          <div class="section-label">
+            <h2>02 / Contrast check</h2>
+            <span>WCAG 2.2</span>
+          </div>
+          <div class="contrast-controls">
+            <label>Text color<select id="foreground"></select></label
+            ><span aria-hidden="true">on</span
+            ><label>Background<select id="background"></select></label>
+          </div>
+          <div id="contrast-sample">
+            <span>Aa</span>
+            <p>The details make<br />the difference.</p>
+          </div>
+          <div class="contrast-result">
+            <strong id="ratio">0.00<span>:1</span></strong>
+            <div><span id="aa"></span><span id="aaa"></span></div>
+          </div>
+          <p class="small">
+            AA needs 4.5:1 for normal text, 3:1 for large text.
+          </p>
+        </div>
+      </section>
+      <section class="collections">
+        <div class="section-label">
+          <h2>03 / A place to start</h2>
+          <span>CURATED COMBINATIONS</span>
+        </div>
+        <div id="presets" class="presets"></div>
+      </section>
+      <section id="library" class="library" hidden>
+        <div class="section-label">
+          <h2>Your saved palettes</h2>
+          <button id="library-close" class="plain">Close ×</button>
+        </div>
+        <div id="saved-palettes"></div>
+      </section>
+    </main>
+    <footer>
+      <span>Made for the joy of making.</span
+      ><span>HueLab / Independent color experiments</span>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
